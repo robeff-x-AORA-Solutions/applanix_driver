@@ -41,8 +41,8 @@ LvxClientRos::LvxClientRos(const rclcpp::NodeOptions &options) :
     publishers_(),
     transform_broadcaster_(std::nullopt) {
 
-  std::string ip = this->declare_parameter("lvx_ip", "192.168.1.100");
-  int port = this->declare_parameter("port", 5602);
+  std::string ip = this->declare_parameter("lvx_ip", "192.168.53.100");
+  int port = this->declare_parameter("port", 5017);
 
   lvx_client_.emplace(ip, port);
 
