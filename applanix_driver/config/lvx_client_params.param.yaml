@@ -5,6 +5,7 @@
     parent_frame: "ned"
     child_frame: "POS_REF"
     base_frame_id: "base_link"
+    imu_frame: "imu_link"
     gnss_ins_frame_id: "gnss_ins_link"
     publish_gsof_msgs: true
     publish_ros_msgs: true

@@ -66,6 +66,7 @@ class LvxClientRos : public rclcpp::Node {
   std::string parent_frame_id_;
   std::string child_frame_id_;
   std::string base_frame_id_;
+  std::string imu_frame_id_;
   std::string gnss_ins_frame_id_;
 
   std::optional<applanix_driver::LvxClient> lvx_client_;

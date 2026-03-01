@@ -49,6 +49,7 @@ LvxClientRos::LvxClientRos(const rclcpp::NodeOptions &options) :
   parent_frame_id_ = this->declare_parameter("parent_frame", k_default_parent_frame);
   child_frame_id_ = this->declare_parameter("child_frame", k_default_child_frame);
   base_frame_id_ = this->declare_parameter("base_frame",k_default_base_frame_id);
+  imu_frame_id_ = this->declare_parameter("imu_frame", base_frame_id_);
   gnss_ins_frame_id_ = this->declare_parameter("gnss_ins_frame_id",k_default_gnss_ins_frame_id);
   publish_gsof_msgs_ = this->declare_parameter("publish_gsof_msgs", true);
   publish_ros_msgs_ = this->declare_parameter("publish_ros_msgs", true);
@@ -213,7 +214,7 @@ void LvxClientRos::publishImuMsgCallback(const applanix_driver::gsof::Message &)
                                                   ? toImuMsg(*ins_solution_, *ins_solution_rms_, enable_ned2enu_transform_)
                                                   : toImuMsg(*ins_solution_, enable_ned2enu_transform_);
 
-  ImuMsg.header.frame_id = base_frame_id_;
+  ImuMsg.header.frame_id = imu_frame_id_;
   ImuMsg.header.stamp = getRosTimestamp(ins_solution_->gps_time);
 
   using Imu = sensor_msgs::msg::Imu;
