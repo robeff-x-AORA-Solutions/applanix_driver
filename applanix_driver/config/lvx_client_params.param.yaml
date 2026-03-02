@@ -1,6 +1,6 @@
 /**:
   ros__parameters:
-    lvx_ip: "192.168.53.100"
+    lvx_ip: "192.168.1.100"
     port: 5017
     parent_frame: "ned"
     child_frame: "POS_REF"
