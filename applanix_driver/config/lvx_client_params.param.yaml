@@ -3,7 +3,7 @@
     lvx_ip: "192.168.1.100"
     port: 5017
     parent_frame: "ned"
-    child_frame: "POS_REF"
+    child_frame: "gnss_ins_link"
     base_frame_id: "base_link"
     imu_frame: "imu_link"
     gnss_ins_frame_id: "gnss_ins_link"
