@@ -29,6 +29,8 @@ def generate_launch_description():
             executable='lvx_client_node',
             name=LaunchConfiguration('node_name'),
             parameters=[config, LaunchConfiguration('config')],
+            respawn=True,
+            respawn_delay=5.0,
             output='screen'
         )
     ])
