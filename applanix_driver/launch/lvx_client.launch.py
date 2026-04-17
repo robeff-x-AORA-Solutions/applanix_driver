@@ -30,7 +30,7 @@ def generate_launch_description():
             name=LaunchConfiguration('node_name'),
             parameters=[config, LaunchConfiguration('config')],
             respawn=True,
-            respawn_delay=5.0,
+            respawn_delay=60.0,
             output='screen'
         )
     ])
